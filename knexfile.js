@@ -5,10 +5,10 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './data/uandp.db3',
+      filename: './data/newuandp.db3',
     },
     pool: {
-      // SQLite will not enforce FK by default
+      
       afterCreate: (conn, done) => {
         conn.run('PRAGMA foreign_keys = ON', done);
       },
@@ -16,8 +16,6 @@ module.exports = {
     migrations: {
       directory: './database/migrations',
     },
-    seeds: {
-      directory: './database/seeds',
-    },
+    
   },
 };
